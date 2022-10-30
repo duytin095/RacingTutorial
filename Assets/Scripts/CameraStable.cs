@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class CameraStable : MonoBehaviour
 {
+    [SerializeField]
     private GameObject theCar;
     private float carX, carY, carZ;
     void Start()
     {
-        theCar = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     // Update is called once per frame
