@@ -1,24 +1,32 @@
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 public class LapTimeManager : MonoBehaviour
 {
+    //Present time
     public static int minuteCount;
     public static int secondCount;
     public static float miliCount;
+
+    //Best time
+    public static int minuteCountBest;
+    public static int secondCountBest;
+    public static float miliCountBest;
+
+
     public static string miliDisplay;
 
     public GameObject minuteBox;
     public GameObject secondBox;
     public GameObject miliBox;
 
-
     // Update is called once per frame
     void Update()
     {
+
         miliCount += Time.deltaTime * 10;
-        miliDisplay = miliCount.ToString("0");
-        miliBox.GetComponent<Text>().text = "" + miliDisplay;
+        miliDisplay = miliCount.ToString("0.#");
 
         if (miliCount >= 10)
         {

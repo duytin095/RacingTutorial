@@ -40,6 +40,13 @@ public class LapComplete : MonoBehaviour
 
             miliDisplay.GetComponent<Text>().text = "" + LapTimeManager.miliCount;
 
+
+            //Saving time
+            if (GameManager.Instance == null)
+                return;
+
+            GameManager.Instance.SavePlayerInfo();
+
             LapTimeManager.miliCount = 0;
             LapTimeManager.minuteCount = 0;
             LapTimeManager.secondCount = 0;
