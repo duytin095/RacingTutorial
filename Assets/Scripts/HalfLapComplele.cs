@@ -11,7 +11,6 @@ public class HalfLapComplele : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log(collision.gameObject.tag);
             lapCompleteTrigger.SetActive(true);
             halfPointTrigger.SetActive(false);
 

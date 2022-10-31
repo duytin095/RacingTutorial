@@ -1,0 +1,3 @@
+- thay đổi góc nhìn khi nhấn "C"(camera)
+- lưu dữ liệu thời gian tốt nhất
+- nhạc nền "kick in" khi hoàn thành đếm ngược

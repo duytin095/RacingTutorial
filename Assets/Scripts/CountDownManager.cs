@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class CountDownManager : MonoBehaviour
 {
+    [Header("AUDIO")]
     public AudioSource getReadyAudio;
     public AudioSource goAudio;
+    public AudioSource backgroundMusic;
+    [Space(20)]
+
     public LapTimeManager lapTimeManager;
 
     [SerializeField] private PrometeoCarController prometeoCarController;
@@ -43,6 +47,7 @@ public class CountDownManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         countDown.SetActive(false);
         goAudio.Play();
+        backgroundMusic.Play();
         lapTimeManager.enabled = true; //start countinng lap time
         prometeoCarController.enabled = true; //player can move from here
         foreach (var item in follower)

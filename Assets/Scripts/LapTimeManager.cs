@@ -17,7 +17,7 @@ public class LapTimeManager : MonoBehaviour
     void Update()
     {
         miliCount += Time.deltaTime * 10;
-        miliDisplay = miliCount.ToString("F0");
+        miliDisplay = miliCount.ToString("0");
         miliBox.GetComponent<Text>().text = "" + miliDisplay;
 
         if (miliCount >= 10)
