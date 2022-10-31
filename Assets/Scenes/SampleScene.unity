@@ -200,8 +200,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -44.2839, y: -51.972}
-  m_SizeDelta: {x: 8.6831, y: 30}
+  m_AnchoredPosition: {x: -42.512, y: -51.972}
+  m_SizeDelta: {x: 12.226, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &159968441
 MonoBehaviour:
@@ -1712,6 +1712,9 @@ MonoBehaviour:
   minuteBox: {fileID: 2030456914}
   secondBox: {fileID: 785480630}
   miliBox: {fileID: 424532189}
+  minuteBoxBest: {fileID: 1237805993}
+  secondBoxBest: {fileID: 1773011200}
+  miliBoxBest: {fileID: 159968439}
 --- !u!4 &1148956089
 Transform:
   m_ObjectHideFlags: 0
@@ -2473,13 +2476,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d314233a8891f4e45af7df43bb793557, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 127
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -3283,7 +3286,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 771ce407ce807b74885ec23ebd1e6647, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.3
   m_Pitch: 0.75
   Loop: 1
   Mute: 0

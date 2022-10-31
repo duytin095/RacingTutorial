@@ -63,12 +63,12 @@ public class GameManager : MonoBehaviour
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
 
             //Get data
-            LapTimeManager.minuteCount = saveData.minute;
-            LapTimeManager.secondCount = saveData.second;
-            LapTimeManager.miliCount = saveData.milisecond;
+            LapTimeManager.minuteCountBest = saveData.minute;
+            LapTimeManager.secondCountBest = saveData.second;
+            LapTimeManager.miliCountBest = saveData.milisecond;
 
             Debug.Log("LOADING HERE");
-            Debug.Log(saveData.minute +    saveData.second + saveData.milisecond);
+            Debug.Log(saveData.minute + "/" +    saveData.second + "/" +saveData.milisecond);
 
             //Display data in game scene
             
