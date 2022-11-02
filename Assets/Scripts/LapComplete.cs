@@ -12,6 +12,8 @@ public class LapComplete : MonoBehaviour
 
     public GameObject lapTimeBox;
 
+    public LapTimeManager lapTimeManager;
+
 
 
     private void OnTriggerEnter(Collider collision)
@@ -46,6 +48,7 @@ public class LapComplete : MonoBehaviour
                 return;
 
             GameManager.Instance.SavePlayerInfo();
+            lapTimeManager.UpdateBestScore();
 
             LapTimeManager.miliCount = 0;
             LapTimeManager.minuteCount = 0;

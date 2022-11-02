@@ -198,6 +198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storedRawTime: 0
+  storedMunite: 0
+  stroredSecond: 0
+  storedMilisecond: 0
 --- !u!4 &147012795
 Transform:
   m_ObjectHideFlags: 0
@@ -1650,6 +1653,7 @@ MonoBehaviour:
   secondDisplay: {fileID: 1773011200}
   miliDisplay: {fileID: 159968439}
   lapTimeBox: {fileID: 0}
+  lapTimeManager: {fileID: 1148956088}
 --- !u!65 &1125587374
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1758,6 +1762,9 @@ MonoBehaviour:
   minuteBox: {fileID: 2030456914}
   secondBox: {fileID: 785480630}
   miliBox: {fileID: 424532189}
+  minuteBoxBest: {fileID: 1237805993}
+  secondBoxBest: {fileID: 1773011200}
+  miliBoxBest: {fileID: 159968439}
 --- !u!4 &1148956089
 Transform:
   m_ObjectHideFlags: 0

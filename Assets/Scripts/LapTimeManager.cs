@@ -12,9 +12,9 @@ public class LapTimeManager : MonoBehaviour
     public static float rawTime;
 
     //Best time
-    //public static int minuteCountBest;
-    //public static int secondCountBest;
-    //public static float miliCountBest;
+    public static int minuteCountBest;
+    public static int secondCountBest;
+    public static float miliCountBest;
 
 
     public static string miliDisplay;
@@ -23,9 +23,9 @@ public class LapTimeManager : MonoBehaviour
     public GameObject secondBox;
     public GameObject miliBox;
 
-    //public GameObject minuteBoxBest;
-    //public GameObject secondBoxBest;
-    //public GameObject miliBoxBest;
+    public GameObject minuteBoxBest;
+    public GameObject secondBoxBest;
+    public GameObject miliBoxBest;
     private void Start()
     {
         if (GameManager.Instance == null)
@@ -33,10 +33,7 @@ public class LapTimeManager : MonoBehaviour
 
             return;
         }
-        GameManager.Instance.LoadPlayerInfo();
-        //minuteBoxBest.GetComponent<Text>().text = minuteCountBest.ToString() + ":";
-        //secondBoxBest.GetComponent<Text>().text = secondCountBest.ToString() + ".";
-        //miliBoxBest.GetComponent<Text>().text = miliCountBest.ToString();
+        UpdateBestScore();
     }
 
     // Update is called once per frame
@@ -82,5 +79,35 @@ public class LapTimeManager : MonoBehaviour
         }
 
         miliBox.GetComponent<Text>().text = "" + miliDisplay;
+    }
+
+
+    public void UpdateBestScore()
+    {
+        GameManager.Instance.LoadPlayerInfo();
+
+        if (minuteCountBest <= 9)
+        {
+            minuteBoxBest.GetComponent<Text>().text = "0" + minuteCountBest.ToString() + ":";
+
+        }
+        else
+        {
+            minuteBoxBest.GetComponent<Text>().text = "" + minuteCountBest.ToString() + ":";
+
+        }
+
+        if (secondCountBest <= 9)
+        {
+            secondBoxBest.GetComponent<Text>().text = "0" + secondCountBest.ToString() + ".";
+
+        }
+        else
+        {
+            secondBoxBest.GetComponent<Text>().text = "" + secondCountBest.ToString() + ".";
+
+        }
+        
+        miliBoxBest.GetComponent<Text>().text = miliCountBest.ToString();
     }
 }

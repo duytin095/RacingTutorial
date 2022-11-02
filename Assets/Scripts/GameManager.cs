@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
 
     public float storedRawTime;
 
+    public int storedMunite;
+    public int stroredSecond;
+    public float storedMilisecond;
+
     private void Awake()
     {
         Instance = this;
@@ -49,15 +53,31 @@ public class GameManager : MonoBehaviour
 
         if(storedRawTime == 0)
         {
-            saveData.rawTime = LapTimeManager.rawTime;
+            //saveData.rawTime = LapTimeManager.rawTime;
+            storedRawTime = LapTimeManager.rawTime;
+            storedMunite = LapTimeManager.minuteCount;
+            stroredSecond = LapTimeManager.secondCount;
+            storedMilisecond = LapTimeManager.miliCount;
+
+            /*
+            saveData.minute = LapTimeManager.minuteCount;
+            saveData.second = LapTimeManager.secondCount;
+            saveData.milisecond = LapTimeManager.miliCount;
+            */
             
         }
-        Debug.Log("LAP RAW TIME>>"+LapTimeManager.rawTime);
         if(storedRawTime > LapTimeManager.rawTime)
         {
             storedRawTime = LapTimeManager.rawTime;
+            storedMunite = LapTimeManager.minuteCount;
+            stroredSecond = LapTimeManager.secondCount;
+            storedMilisecond = LapTimeManager.miliCount;
         }
+
         saveData.rawTime = storedRawTime;
+        saveData.minute = storedMunite;
+        saveData.second = stroredSecond;
+        saveData.milisecond = storedMilisecond;
 
 
         string json = JsonUtility.ToJson(saveData);
@@ -78,14 +98,18 @@ public class GameManager : MonoBehaviour
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
 
             //Get data
-            //LapTimeManager.minuteCountBest = saveData.minute;
-            //LapTimeManager.secondCountBest = saveData.second;
-            //LapTimeManager.miliCountBest = saveData.milisecond;
+            LapTimeManager.minuteCountBest = saveData.minute;
+            LapTimeManager.secondCountBest = saveData.second;
+            LapTimeManager.miliCountBest = saveData.milisecond;
 
             Debug.Log("LOADING HERE");
             Debug.Log(saveData.minute + "/" +    saveData.second + "/" +saveData.milisecond);
-            Debug.Log("RAW TIME" + saveData.rawTime);
+            Debug.Log("RAW TIME: " + saveData.rawTime);
             storedRawTime = saveData.rawTime;
+            storedMunite = saveData.minute;
+            stroredSecond = saveData.second;
+            storedMilisecond = saveData.milisecond;
+
 
             //Display data in game scene
             
