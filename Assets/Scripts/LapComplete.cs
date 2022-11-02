@@ -18,27 +18,27 @@ public class LapComplete : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (LapTimeManager.secondCount <= 9)
-            {
-                secondDisplay.GetComponent<Text>().text = "0" + LapTimeManager.secondCount + ".";
+            //if (LapTimeManager.secondCount <= 9)
+            //{
+            //    secondDisplay.GetComponent<Text>().text = "0" + LapTimeManager.secondCount + ".";
 
-            }
-            else
-            {
-                secondDisplay.GetComponent<Text>().text = "" + LapTimeManager.secondCount + ".";
-            }
+            //}
+            //else
+            //{
+            //    secondDisplay.GetComponent<Text>().text = "" + LapTimeManager.secondCount + ".";
+            //}
 
-            if (LapTimeManager.minuteCount <= 9)
-            {
-                minuteDisplay.GetComponent<Text>().text = "0" + LapTimeManager.minuteCount + ".";
-            }
-            else
-            {
-                minuteDisplay.GetComponent<Text>().text = "" + LapTimeManager.minuteCount + ".";
+            //if (LapTimeManager.minuteCount <= 9)
+            //{
+            //    minuteDisplay.GetComponent<Text>().text = "0" + LapTimeManager.minuteCount + ".";
+            //}
+            //else
+            //{
+            //    minuteDisplay.GetComponent<Text>().text = "" + LapTimeManager.minuteCount + ".";
 
-            }
+            //}
 
-            miliDisplay.GetComponent<Text>().text = "" + LapTimeManager.miliCount;
+            //miliDisplay.GetComponent<Text>().text = "" + LapTimeManager.miliCount;
 
 
             //Saving time
@@ -50,6 +50,7 @@ public class LapComplete : MonoBehaviour
             LapTimeManager.miliCount = 0;
             LapTimeManager.minuteCount = 0;
             LapTimeManager.secondCount = 0;
+            LapTimeManager.rawTime = 0;
 
             halfPointTrigger.SetActive(true);
             lapCompleteTrigger.SetActive(false);

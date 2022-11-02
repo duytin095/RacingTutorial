@@ -8,7 +8,9 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    // Start is called before the first frame update
+
+    public float storedRawTime;
+
     private void Awake()
     {
         Instance = this;
@@ -19,7 +21,6 @@ public class GameManager : MonoBehaviour
         //LoadPlayerInfo();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -31,25 +32,39 @@ public class GameManager : MonoBehaviour
         public int minute;
         public int second;
         public float milisecond;
+        public float rawTime;
     }
 
     public void SavePlayerInfo()
     {
         SaveData saveData = new SaveData();
 
-        LapTimeManager.minuteCountBest = LapTimeManager.minuteCount;
-        LapTimeManager.secondCountBest = LapTimeManager.secondCount;
-        LapTimeManager.miliCountBest = LapTimeManager.miliCount;
+        //LapTimeManager.minuteCountBest = LapTimeManager.minuteCount;
+        //LapTimeManager.secondCountBest = LapTimeManager.secondCount;
+        //LapTimeManager.miliCountBest = LapTimeManager.miliCount;
 
-        saveData.minute = LapTimeManager.minuteCountBest;
-        saveData.second = LapTimeManager.secondCountBest;
-        saveData.milisecond = LapTimeManager.miliCountBest;
+        //saveData.minute = LapTimeManager.minuteCountBest;
+        //saveData.second = LapTimeManager.secondCountBest;
+        //saveData.milisecond = LapTimeManager.miliCountBest;
+
+        if(storedRawTime == 0)
+        {
+            saveData.rawTime = LapTimeManager.rawTime;
+            
+        }
+        Debug.Log("LAP RAW TIME>>"+LapTimeManager.rawTime);
+        if(storedRawTime > LapTimeManager.rawTime)
+        {
+            storedRawTime = LapTimeManager.rawTime;
+        }
+        saveData.rawTime = storedRawTime;
+
 
         string json = JsonUtility.ToJson(saveData);
         File.WriteAllText(Application.persistentDataPath + "/racingTutorialSaveFile.json", json);
 
         Debug.Log("SAVING HERE!");
-        Debug.Log(saveData.minute + "/"+saveData.second + "/" + saveData.milisecond);
+        Debug.Log(saveData.minute + "/"+saveData.second + "/" + saveData.milisecond + "RAW TIME:>>>> " + saveData.rawTime);
 
     }
 
@@ -63,12 +78,14 @@ public class GameManager : MonoBehaviour
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
 
             //Get data
-            LapTimeManager.minuteCountBest = saveData.minute;
-            LapTimeManager.secondCountBest = saveData.second;
-            LapTimeManager.miliCountBest = saveData.milisecond;
+            //LapTimeManager.minuteCountBest = saveData.minute;
+            //LapTimeManager.secondCountBest = saveData.second;
+            //LapTimeManager.miliCountBest = saveData.milisecond;
 
             Debug.Log("LOADING HERE");
             Debug.Log(saveData.minute + "/" +    saveData.second + "/" +saveData.milisecond);
+            Debug.Log("RAW TIME" + saveData.rawTime);
+            storedRawTime = saveData.rawTime;
 
             //Display data in game scene
             

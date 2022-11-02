@@ -9,10 +9,12 @@ public class LapTimeManager : MonoBehaviour
     public static int secondCount;
     public static float miliCount;
 
+    public static float rawTime;
+
     //Best time
-    public static int minuteCountBest;
-    public static int secondCountBest;
-    public static float miliCountBest;
+    //public static int minuteCountBest;
+    //public static int secondCountBest;
+    //public static float miliCountBest;
 
 
     public static string miliDisplay;
@@ -21,9 +23,9 @@ public class LapTimeManager : MonoBehaviour
     public GameObject secondBox;
     public GameObject miliBox;
 
-    public GameObject minuteBoxBest;
-    public GameObject secondBoxBest;
-    public GameObject miliBoxBest;
+    //public GameObject minuteBoxBest;
+    //public GameObject secondBoxBest;
+    //public GameObject miliBoxBest;
     private void Start()
     {
         if (GameManager.Instance == null)
@@ -32,15 +34,15 @@ public class LapTimeManager : MonoBehaviour
             return;
         }
         GameManager.Instance.LoadPlayerInfo();
-        minuteBoxBest.GetComponent<Text>().text = minuteCountBest.ToString() + ":";
-        secondBoxBest.GetComponent<Text>().text = secondCountBest.ToString() + ".";
-        miliBoxBest.GetComponent<Text>().text = miliCountBest.ToString();
+        //minuteBoxBest.GetComponent<Text>().text = minuteCountBest.ToString() + ":";
+        //secondBoxBest.GetComponent<Text>().text = secondCountBest.ToString() + ".";
+        //miliBoxBest.GetComponent<Text>().text = miliCountBest.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        rawTime += Time.deltaTime * 10;
         miliCount += Time.deltaTime * 10;
         miliDisplay = miliCount.ToString("F0");
 
