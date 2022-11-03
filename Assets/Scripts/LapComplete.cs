@@ -1,5 +1,5 @@
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LapComplete : MonoBehaviour
 {
@@ -9,10 +9,14 @@ public class LapComplete : MonoBehaviour
     public GameObject minuteDisplay;
     public GameObject secondDisplay;
     public GameObject miliDisplay;
+    
 
     public GameObject lapTimeBox;
 
     public LapTimeManager lapTimeManager;
+
+    public float lapCount = 0;
+    public Text lapCountDisplay;
 
 
 
@@ -20,29 +24,6 @@ public class LapComplete : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //if (LapTimeManager.secondCount <= 9)
-            //{
-            //    secondDisplay.GetComponent<Text>().text = "0" + LapTimeManager.secondCount + ".";
-
-            //}
-            //else
-            //{
-            //    secondDisplay.GetComponent<Text>().text = "" + LapTimeManager.secondCount + ".";
-            //}
-
-            //if (LapTimeManager.minuteCount <= 9)
-            //{
-            //    minuteDisplay.GetComponent<Text>().text = "0" + LapTimeManager.minuteCount + ".";
-            //}
-            //else
-            //{
-            //    minuteDisplay.GetComponent<Text>().text = "" + LapTimeManager.minuteCount + ".";
-
-            //}
-
-            //miliDisplay.GetComponent<Text>().text = "" + LapTimeManager.miliCount;
-
-
             //Saving time
             if (GameManager.Instance == null)
                 return;
@@ -57,7 +38,10 @@ public class LapComplete : MonoBehaviour
 
             halfPointTrigger.SetActive(true);
             lapCompleteTrigger.SetActive(false);
-    }
 
-}
+            lapCount++;
+            lapCountDisplay.text = lapCount.ToString();
+        }
+
+    }
 }

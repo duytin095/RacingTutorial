@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour
@@ -20,15 +17,6 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    void Start()
-    {
-        //LoadPlayerInfo();
-    }
-
-    void Update()
-    {
-        
-    }
 
     [System.Serializable]
     class SaveData
@@ -43,27 +31,12 @@ public class GameManager : MonoBehaviour
     {
         SaveData saveData = new SaveData();
 
-        //LapTimeManager.minuteCountBest = LapTimeManager.minuteCount;
-        //LapTimeManager.secondCountBest = LapTimeManager.secondCount;
-        //LapTimeManager.miliCountBest = LapTimeManager.miliCount;
-
-        //saveData.minute = LapTimeManager.minuteCountBest;
-        //saveData.second = LapTimeManager.secondCountBest;
-        //saveData.milisecond = LapTimeManager.miliCountBest;
-
         if(storedRawTime == 0)
         {
-            //saveData.rawTime = LapTimeManager.rawTime;
             storedRawTime = LapTimeManager.rawTime;
             storedMunite = LapTimeManager.minuteCount;
             stroredSecond = LapTimeManager.secondCount;
             storedMilisecond = LapTimeManager.miliCount;
-
-            /*
-            saveData.minute = LapTimeManager.minuteCount;
-            saveData.second = LapTimeManager.secondCount;
-            saveData.milisecond = LapTimeManager.miliCount;
-            */
             
         }
         if(storedRawTime > LapTimeManager.rawTime)
