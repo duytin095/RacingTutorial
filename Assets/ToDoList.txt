@@ -1,4 +1,4 @@
 - thay đổi góc nhìn khi nhấn "C"(camera)
-- lap count
 - Camera stable
 - Smoothing opponent movement
+- finish things(stop the car, move camera around the car, play music) happen when done all lap requiment
