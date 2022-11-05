@@ -18,15 +18,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    [System.Serializable]
-    class SaveData
-    {
-        public int minute;
-        public int second;
-        public float milisecond;
-        public float rawTime;
-    }
-
     public void SavePlayerInfo()
     {
         SaveData saveData = new SaveData();
@@ -88,5 +79,14 @@ public class GameManager : MonoBehaviour
             
 
         }
+    }
+
+    [System.Serializable]
+    class SaveData
+    {
+        public int minute;
+        public int second;
+        public float milisecond;
+        public float rawTime;
     }
 }

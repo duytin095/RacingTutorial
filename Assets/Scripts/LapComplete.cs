@@ -16,10 +16,30 @@ public class LapComplete : MonoBehaviour
     public LapTimeManager lapTimeManager;
 
     public float lapCount = 0;
+    public float lapTotal = 1;
     public Text lapCountDisplay;
 
 
+    public GameObject playerFollowCam;
+    public GameObject player;
+    public GameObject fisnishLineCam;
+    private bool isCrossFinishLine = false;
 
+    public GameObject carEngineSound, carFX, bgMusic;
+    public AudioSource completeSound;
+
+    private Follower[] follower;
+
+    private void Start()
+    {
+        follower = FindObjectsOfType<Follower>();
+    }
+
+    private void Update()
+    {
+        if(isCrossFinishLine)
+            fisnishLineCam.transform.RotateAround(player.transform.position, Vector3.up, 100 * Time.deltaTime);
+    }
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -39,8 +59,34 @@ public class LapComplete : MonoBehaviour
             halfPointTrigger.SetActive(true);
             lapCompleteTrigger.SetActive(false);
 
-            lapCount++;
+            if (lapCount < lapTotal)
+            {
+                lapCount++;
+
+            }
             lapCountDisplay.text = lapCount.ToString();
+
+            if(lapCount == lapTotal)
+            {
+                lapCompleteTrigger.SetActive(true);
+                playerFollowCam.SetActive(false);
+                fisnishLineCam.SetActive(true);
+                isCrossFinishLine = true;
+                player.GetComponent<Rigidbody>().velocity = Vector3.zero; //stop player's car
+                player.GetComponent<PrometeoCarController>().enabled = false; // disable player's controller
+                completeSound.Play(); // play complete sound
+                carEngineSound.SetActive(false); // diable car sound
+                carFX.SetActive(false); // disable car sound
+                bgMusic.SetActive(false); // backgound music too
+                this.transform.GetComponent<BoxCollider>().enabled = false; // the race finish now, so there is nothing to tracking anymore
+
+
+                // disable opponent movement
+                foreach (var opponent in follower)
+                {
+                    opponent.enabled = false;
+                }
+            }
         }
 
     }

@@ -1,4 +1,4 @@
 - thay đổi góc nhìn khi nhấn "C"(camera)
 - Camera stable
 - Smoothing opponent movement
-- finish things(stop the car, move camera around the car, play music) happen when done all lap requiment
+- some bug happen with car's velocity an the wheel at the finish line
