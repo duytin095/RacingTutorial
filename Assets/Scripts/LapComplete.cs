@@ -25,8 +25,7 @@ public class LapComplete : MonoBehaviour
     public GameObject fisnishLineCam;
     private bool isCrossFinishLine = false;
 
-    public GameObject carEngineSound, carFX, bgMusic;
-    public AudioSource completeSound;
+    public AudioSource completeSound, carEngineSound, carFX, bgMusic;
 
     private Follower[] follower;
 
@@ -38,7 +37,7 @@ public class LapComplete : MonoBehaviour
     private void Update()
     {
         if(isCrossFinishLine)
-            fisnishLineCam.transform.RotateAround(player.transform.position, Vector3.up, 100 * Time.deltaTime);
+            fisnishLineCam.transform.RotateAround(player.transform.position, Vector3.up, 30 * Time.deltaTime);
     }
     private void OnTriggerEnter(Collider collision)
     {
@@ -72,12 +71,13 @@ public class LapComplete : MonoBehaviour
                 playerFollowCam.SetActive(false);
                 fisnishLineCam.SetActive(true);
                 isCrossFinishLine = true;
-                player.GetComponent<Rigidbody>().velocity = Vector3.zero; //stop player's car
+                player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ;
+                player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationX;
                 player.GetComponent<PrometeoCarController>().enabled = false; // disable player's controller
                 completeSound.Play(); // play complete sound
-                carEngineSound.SetActive(false); // diable car sound
-                carFX.SetActive(false); // disable car sound
-                bgMusic.SetActive(false); // backgound music too
+                carEngineSound.Pause(); // diable car sound
+                carFX.Pause(); // disable car sound
+                bgMusic.Pause(); // backgound music too
                 this.transform.GetComponent<BoxCollider>().enabled = false; // the race finish now, so there is nothing to tracking anymore
 
 

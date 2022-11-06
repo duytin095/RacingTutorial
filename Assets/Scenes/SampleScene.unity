@@ -2026,10 +2026,10 @@ MonoBehaviour:
   playerFollowCam: {fileID: 963194225}
   player: {fileID: 1602767578}
   fisnishLineCam: {fileID: 1216448678}
-  carEngineSound: {fileID: 2066152548}
-  carFX: {fileID: 1928977430}
-  bgMusic: {fileID: 1728597151}
   completeSound: {fileID: 21309011}
+  carEngineSound: {fileID: 2066152550}
+  carFX: {fileID: 1928977432}
+  bgMusic: {fileID: 1728597153}
 --- !u!65 &1125587374
 BoxCollider:
   m_ObjectHideFlags: 0
