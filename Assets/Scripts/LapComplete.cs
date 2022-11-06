@@ -65,6 +65,7 @@ public class LapComplete : MonoBehaviour
             }
             lapCountDisplay.text = lapCount.ToString();
 
+            // FINISH LINE
             if(lapCount == lapTotal)
             {
                 lapCompleteTrigger.SetActive(true);
@@ -80,7 +81,7 @@ public class LapComplete : MonoBehaviour
                 bgMusic.Pause(); // backgound music too
                 this.transform.GetComponent<BoxCollider>().enabled = false; // the race finish now, so there is nothing to tracking anymore
 
-
+                lapTimeManager.enabled = false; // stop couting time
                 // disable opponent movement
                 foreach (var opponent in follower)
                 {
