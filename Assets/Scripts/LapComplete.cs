@@ -71,12 +71,12 @@ public class LapComplete : MonoBehaviour
                 playerFollowCam.SetActive(false);
                 fisnishLineCam.SetActive(true);
                 isCrossFinishLine = true;
-                player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ;
-                player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationX;
+                player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionX;
+               // player.GetComponent<Rigidbody>().constraints =  ;
                 player.GetComponent<PrometeoCarController>().enabled = false; // disable player's controller
                 completeSound.Play(); // play complete sound
                 carEngineSound.Pause(); // diable car sound
-                carFX.Pause(); // disable car sound
+                carFX.enabled = false; // disable car sound
                 bgMusic.Pause(); // backgound music too
                 this.transform.GetComponent<BoxCollider>().enabled = false; // the race finish now, so there is nothing to tracking anymore
 
