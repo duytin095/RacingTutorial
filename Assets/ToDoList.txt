@@ -1,4 +1,5 @@
 - thay đổi góc nhìn khi nhấn "C"(camera)
 - Camera stable
 - Smoothing opponent movement
-- some bug happen with car's velocity an the wheel at the finish line
+- manage scene, button(load scene, back scene);
+- 4:19
