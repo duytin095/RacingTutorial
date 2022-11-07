@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if(Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
@@ -88,5 +93,18 @@ public class GameManager : MonoBehaviour
         public int second;
         public float milisecond;
         public float rawTime;
+    }
+
+    public void PlayGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+    }
+    public void SelectTrack()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+    }
+    public void BackToMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }
