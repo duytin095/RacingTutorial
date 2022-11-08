@@ -94,17 +94,4 @@ public class GameManager : MonoBehaviour
         public float milisecond;
         public float rawTime;
     }
-
-    public void PlayGame()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-    }
-    public void SelectTrack()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
-    }
-    public void BackToMenu()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-    }
 }
