@@ -40,4 +40,9 @@ public class UIHandle : MonoBehaviour
     {
         Time.timeScale = 0;
     }
+
+    public void UnPauseGame()
+    {
+        Time.timeScale = 1;
+    }
 }

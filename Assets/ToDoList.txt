@@ -2,4 +2,5 @@
 - Camera stable
 - Smoothing opponent movement
 - manage scene, button(load scene, back scene);
-- 4:19
+- 4:27
+- mini map 
