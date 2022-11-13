@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TrackSelect.unity
     guid: 1e76c609947e2df45ba7068cf1c6ba22
+  - enabled: 1
+    path: Assets/Scenes/CustomCar.unity
+    guid: 353b64040a94c79469b3bbd7773c83ba
   m_configObjects: {}

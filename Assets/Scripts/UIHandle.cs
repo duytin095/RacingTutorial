@@ -7,6 +7,7 @@ using UnityEditor;
 public class UIHandle : MonoBehaviour
 {
     private const string MAIN_MENU = "Menu";
+    private const string CUSTOM_CAR = "CustomCar";
     private const string TRACK_SELECTION = "TrackSelect";
 
 
@@ -23,6 +24,11 @@ public class UIHandle : MonoBehaviour
     public void BackToMainMenu()
     {
         SceneManager.LoadScene(MAIN_MENU);
+
+    }
+    public void CustomCarScene()
+    {
+        SceneManager.LoadScene(CUSTOM_CAR);
 
     }
 
