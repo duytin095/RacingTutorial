@@ -3,56 +3,22 @@ using System.IO;
 
 public class ColorHandle : MonoBehaviour
 {
-    public Material caro;
-    public Material yellow;
-    public Material blue;
-    public Material red;
-    public Material defaultColor;
     public GameObject car;
-
-    private Material presentColor;
-    void Start()
+    public Material pickingColor;
+    public static ColorHandle Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+    private void Start()
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     public void ChangeColor(Material color)
     {
         car.GetComponent<MeshRenderer>().material = color;
-        presentColor = color;
-    }
-
-
-    public void YellowButt()
-    {
-        ChangeColor(yellow);
-        SaveCarProperty();
-    }
-    public void CaroButt()
-    {
-        ChangeColor(caro);
-        SaveCarProperty();
-    }
-    public void BlueButt()
-    {
-        ChangeColor(blue);
-        SaveCarProperty();
-    }
-    public void RedButt()
-    {
-        ChangeColor(red);
-        SaveCarProperty();
-    }
-    public void DefaultButt()
-    {
-        ChangeColor(defaultColor);
+        pickingColor = color;
         SaveCarProperty();
     }
 
@@ -62,10 +28,24 @@ public class ColorHandle : MonoBehaviour
     {
         Car carData = new Car();
 
-        carData.color = presentColor;
+        carData.color = pickingColor;
         string json = JsonUtility.ToJson(carData);
         File.WriteAllText(Application.persistentDataPath + "/CarProperty.json", json);
         Debug.Log("Save Car Property");
+    }
+
+    public void LoadColor()
+    {
+
+        string path = Application.persistentDataPath + "/CarProperty.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            Car data = JsonUtility.FromJson<Car>(json);
+
+            pickingColor = data.color;
+            Debug.Log("Load Color here");
+        }
     }
 }
 
@@ -73,7 +53,5 @@ public class ColorHandle : MonoBehaviour
 
 [SerializeField]
 public class Car{
-    public Material color;
-
-    
+    public Material color;  
 }

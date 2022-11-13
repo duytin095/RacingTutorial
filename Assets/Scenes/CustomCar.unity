@@ -208,11 +208,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1307018012}
         m_TargetAssemblyTypeName: ColorHandle, Assembly-CSharp
-        m_MethodName: RedButt
-        m_Mode: 1
+        m_MethodName: ChangeColor
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2100000, guid: b9d9fa88a168d014ea7a4c289fee282c, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -464,11 +464,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1307018012}
         m_TargetAssemblyTypeName: ColorHandle, Assembly-CSharp
-        m_MethodName: YellowButt
-        m_Mode: 1
+        m_MethodName: ChangeColor
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2100000, guid: 0aaa3002ad802994088f1b8327155c1a, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1251,15 +1251,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.91
+      value: -26.95
       objectReference: {fileID: 0}
     - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.76
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.05
+      value: 4.02
       objectReference: {fileID: 0}
     - target: {fileID: 261786959625234688, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1705,11 +1705,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1307018012}
         m_TargetAssemblyTypeName: ColorHandle, Assembly-CSharp
-        m_MethodName: BlueButt
-        m_Mode: 1
+        m_MethodName: ChangeColor
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2100000, guid: a7e5c75f38d56a9439ca6e7df20cf418, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1974,12 +1974,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28353d84f467ba1449c5635529119565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  caro: {fileID: 2100000, guid: 6c0a5b9e148a4f449a1cb667944bfe0a, type: 2}
-  yellow: {fileID: 2100000, guid: 0aaa3002ad802994088f1b8327155c1a, type: 2}
-  blue: {fileID: 2100000, guid: a7e5c75f38d56a9439ca6e7df20cf418, type: 2}
-  red: {fileID: 2100000, guid: b9d9fa88a168d014ea7a4c289fee282c, type: 2}
-  defaultColor: {fileID: 2100000, guid: 2d997c6d92b71154e8dee74617594aea, type: 2}
   car: {fileID: 1877041248}
+  pickingColor: {fileID: 0}
 --- !u!4 &1307018013
 Transform:
   m_ObjectHideFlags: 0
@@ -2630,11 +2626,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1307018012}
         m_TargetAssemblyTypeName: ColorHandle, Assembly-CSharp
-        m_MethodName: CaroButt
-        m_Mode: 1
+        m_MethodName: ChangeColor
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2100000, guid: 6c0a5b9e148a4f449a1cb667944bfe0a, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2688,6 +2684,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 934883528070179459, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
   m_PrefabInstance: {fileID: 735123802}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1877041249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877041248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 778b808fdd5d50b42ba4f3e4b10cbcf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1935849598
 GameObject:
   m_ObjectHideFlags: 0
