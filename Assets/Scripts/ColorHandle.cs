@@ -32,6 +32,10 @@ public class ColorHandle : MonoBehaviour
         string json = JsonUtility.ToJson(carData);
         File.WriteAllText(Application.persistentDataPath + "/CarProperty.json", json);
         Debug.Log("Save Car Property");
+
+
+
+        GameManager.Instance.storedColor = pickingColor;
     }
 
     public void LoadColor()
@@ -45,6 +49,11 @@ public class ColorHandle : MonoBehaviour
 
             pickingColor = data.color;
             Debug.Log("Load Color here");
+
+
+
+
+            GameManager.Instance.storedColor = pickingColor;
         }
     }
 }

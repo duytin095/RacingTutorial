@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public int stroredSecond;
     public float storedMilisecond;
 
+    public Material storedColor;
+
     private void Awake()
     {
         if(Instance != null)
