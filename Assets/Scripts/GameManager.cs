@@ -7,11 +7,13 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public float storedRawTime;
-
     public int storedMunite;
     public int stroredSecond;
     public float storedMilisecond;
 
+
+
+    //Color Hadler
     public Material storedColor;
 
     private void Awake()
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        LoadColor();
     }
 
     public void SavePlayerInfo()
@@ -81,10 +84,22 @@ public class GameManager : MonoBehaviour
             stroredSecond = saveData.second;
             storedMilisecond = saveData.milisecond;
 
+        }
 
-            //Display data in game scene
-            
+    }
 
+    public void LoadColor()
+    {
+
+        string path = Application.persistentDataPath + "/CarProperty.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            Car data = JsonUtility.FromJson<Car>(json);
+
+            storedColor = data.color;
+            Debug.Log("Load Color here");
+            GameManager.Instance.storedColor = storedColor;
         }
     }
 
@@ -96,4 +111,7 @@ public class GameManager : MonoBehaviour
         public float milisecond;
         public float rawTime;
     }
+
+
+
 }
