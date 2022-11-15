@@ -3,3 +3,5 @@
 - Smoothing opponent movement
 - manage scene, button(load scene, back scene);
 - 4:50
+- add thumbnail to other track
+- Credit scene(with animation like movie, exit to mainmenu after done the animation	)

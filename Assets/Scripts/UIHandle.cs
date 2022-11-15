@@ -9,6 +9,7 @@ public class UIHandle : MonoBehaviour
     private const string MAIN_MENU = "Menu";
     private const string CUSTOM_CAR = "CustomCar";
     private const string TRACK_SELECTION = "TrackSelect";
+    private const string CREDIT_SCENE = "Credit";
 
 
 
@@ -30,6 +31,10 @@ public class UIHandle : MonoBehaviour
     {
         SceneManager.LoadScene(CUSTOM_CAR);
 
+    }
+    public void CreditScene()
+    {
+        SceneManager.LoadScene(CREDIT_SCENE);
     }
 
     public void QuitGame()

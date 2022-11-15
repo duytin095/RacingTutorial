@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CustomCar.unity
     guid: 353b64040a94c79469b3bbd7773c83ba
+  - enabled: 1
+    path: Assets/Scenes/Credit.unity
+    guid: adcc04930f2ad0f4abef7e27cda7d56c
   m_configObjects: {}
