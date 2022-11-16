@@ -6,10 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public float storedRawTime;
-    public int storedMunite;
-    public int stroredSecond;
-    public float storedMilisecond;
+    private float storedRawTime;
+    private int storedMunite;
+    private int stroredSecond;
+    private float storedMilisecond;
 
 
 
