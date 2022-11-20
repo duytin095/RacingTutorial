@@ -4,7 +4,6 @@
 - manage scene, button(load scene, back scene);
 - 5:11	
 - score mode(colllect some thing and increase the score)
-- menu sky box̣(RenderSettings.skybox.setFloat("_Rotation", rotateSpeed * Time.deltaTime))
 - time mode?
 - save money when fisnish the track
 - unlock new color with the cash
