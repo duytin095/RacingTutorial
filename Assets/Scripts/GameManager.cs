@@ -99,7 +99,6 @@ public class GameManager : MonoBehaviour
 
             storedColor = data.color;
             Debug.Log("Load Color here");
-            GameManager.Instance.storedColor = storedColor;
         }
     }
 
@@ -112,6 +111,20 @@ public class GameManager : MonoBehaviour
         public float rawTime;
     }
 
+    [System.Serializable]
+    class Cash
+    {
+        public int value;
+    }
 
+    public void LoadCash()
+    {
 
+    }
+
+    public void SaveCash()
+    {
+        Cash cashData = new Cash();
+
+    }
 }

@@ -981,11 +981,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1307018012}
         m_TargetAssemblyTypeName: ColorHandle, Assembly-CSharp
-        m_MethodName: DefaultButt
-        m_Mode: 1
+        m_MethodName: ChangeColor
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2100000, guid: 2d997c6d92b71154e8dee74617594aea, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

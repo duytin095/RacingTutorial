@@ -10,3 +10,5 @@
 - splash screen
 - sometime the material not attach to player's car(especially when open game after long time
 	(go straight to play scene, not after choose color in custom scene))
+
+- need a pause menu
