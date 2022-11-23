@@ -11,8 +11,31 @@ public class UIHandle : MonoBehaviour
     private const string TRACK_SELECTION = "TrackSelect";
     private const string CREDIT_SCENE = "Credit";
 
+    [SerializeField] private GameObject pausePanel;
+    private bool isGamePause = false;
 
+    private void Start()
+    {
+        if (pausePanel.activeInHierarchy)
+        {
+            pausePanel.SetActive(false);
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isGamePause)
+            {
+                UnPauseGame();
+            }
+            else if(!isGamePause)
+            {
 
+                PauseGame();
+            }
+        }
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
@@ -50,10 +73,14 @@ public class UIHandle : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
+        isGamePause = true;
+        pausePanel.SetActive(true);
     }
 
     public void UnPauseGame()
     {
         Time.timeScale = 1;
+        isGamePause = false;
+        pausePanel.SetActive(false);
     }
 }
