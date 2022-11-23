@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private int storedMunite;
     private int stroredSecond;
     private float storedMilisecond;
+    public int storedCash;
 
 
 
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
         LoadColor();
+        LoadCash();
     }
 
     public void SavePlayerInfo()
@@ -119,12 +121,23 @@ public class GameManager : MonoBehaviour
 
     public void LoadCash()
     {
-
+        string path = Application.persistentDataPath + "/cash.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            Cash cash = JsonUtility.FromJson<Cash>(json);
+            storedCash = cash.value;
+            Debug.Log("load cash" + storedCash);
+        }
     }
 
     public void SaveCash()
     {
         Cash cashData = new Cash();
-
+        storedCash += 50;
+        cashData.value = storedCash;
+        string json = JsonUtility.ToJson(cashData);
+        File.WriteAllText(Application.persistentDataPath + "/cash.json", json);
+        Debug.Log("Save Cash" + cashData.value);
     }
 }

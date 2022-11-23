@@ -48,6 +48,8 @@ public class LapComplete : MonoBehaviour
                 return;
 
             GameManager.Instance.SavePlayerInfo();
+            GameManager.Instance.SaveCash();
+
             lapTimeManager.UpdateBestScore();
 
             LapTimeManager.miliCount = 0;
