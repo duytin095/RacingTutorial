@@ -16,10 +16,14 @@ public class UIHandle : MonoBehaviour
 
     private void Start()
     {
-        if (pausePanel.activeInHierarchy)
+        if(pausePanel != null)
         {
-            pausePanel.SetActive(false);
+            if (pausePanel.activeInHierarchy)
+            {
+                pausePanel.SetActive(false);
+            }
         }
+        
     }
     private void Update()
     {
@@ -39,6 +43,8 @@ public class UIHandle : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
+        UnPauseGame();
+        
     }
 
     public void SelectTrack()
@@ -48,6 +54,7 @@ public class UIHandle : MonoBehaviour
     public void BackToMainMenu()
     {
         SceneManager.LoadScene(MAIN_MENU);
+        UnPauseGame();
 
     }
     public void CustomCarScene()
@@ -72,15 +79,29 @@ public class UIHandle : MonoBehaviour
 
     public void PauseGame()
     {
-        Time.timeScale = 0;
-        isGamePause = true;
-        pausePanel.SetActive(true);
+        if (!isGamePause)
+        {
+            Time.timeScale = 0;
+            AudioListener.pause = true;
+            isGamePause = true;
+            pausePanel.SetActive(true);
+        }
     }
 
     public void UnPauseGame()
     {
-        Time.timeScale = 1;
-        isGamePause = false;
-        pausePanel.SetActive(false);
+        if (isGamePause)
+        {
+            Time.timeScale = 1;
+            AudioListener.pause = false;
+            isGamePause = false;
+            pausePanel.SetActive(false);
+        } 
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        UnPauseGame();
     }
 }
