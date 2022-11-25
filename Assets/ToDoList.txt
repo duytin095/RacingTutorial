@@ -7,7 +7,3 @@
 - unlock new color with the cash
 - check the position when racing and display it on screen
 - splash screen
-- sometime the material not attach to player's car(especially when open game after long time
-	(go straight to play scene, not after choose color in custom scene))
-
-- need a pause menu
