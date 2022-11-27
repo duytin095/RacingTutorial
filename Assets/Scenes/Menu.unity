@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.067735836, g: 0.27409738, b: 0.48475236, a: 1}
+  m_IndirectSpecularColor: {r: 0.067590706, g: 0.27402937, b: 0.48472542, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -705,7 +705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &591218355
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1247,7 +1247,7 @@ GameObject:
   - component: {fileID: 1396101819}
   - component: {fileID: 1396101818}
   m_Layer: 5
-  m_Name: TrackSelectButton
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1270,7 +1270,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 200}
+  m_AnchoredPosition: {x: 0, y: 54}
   m_SizeDelta: {x: 346.5457, y: 115.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1396101818
@@ -1319,7 +1319,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1886106597}
         m_TargetAssemblyTypeName: UIHandle, Assembly-CSharp
-        m_MethodName: SelectTrack
+        m_MethodName: CustomCarScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

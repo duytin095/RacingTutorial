@@ -12,6 +12,7 @@ public class UIHandle : MonoBehaviour
     private const string CREDIT_SCENE = "Credit";
 
     [SerializeField] private GameObject pausePanel;
+    private int confirmPanelChildPosition = 1;
     private bool isGamePause = false;
 
     private void Start()
@@ -29,7 +30,7 @@ public class UIHandle : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isGamePause)
+            if (isGamePause && !ConfirmPanel().activeInHierarchy) //make sure ConfirmPanel was closed
             {
                 UnPauseGame();
             }
@@ -53,7 +54,7 @@ public class UIHandle : MonoBehaviour
     }
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene(MAIN_MENU);
+        SceneManager.LoadScene(CUSTOM_CAR);
         UnPauseGame();
 
     }
@@ -96,6 +97,7 @@ public class UIHandle : MonoBehaviour
             AudioListener.pause = false;
             isGamePause = false;
             pausePanel.SetActive(false);
+            
         } 
     }
 
@@ -103,5 +105,28 @@ public class UIHandle : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         UnPauseGame();
+    }
+
+    public void OpenConfirmMenu()
+    {
+        if (!ConfirmPanel().activeInHierarchy)
+        {
+            ConfirmPanel().SetActive(true);
+        }
+    }
+
+    public void CloseConfirmMenu()
+    {
+        if (ConfirmPanel().activeInHierarchy)
+        {
+            ConfirmPanel().SetActive(false);
+        }
+    }
+
+    private GameObject ConfirmPanel()
+    {
+        GameObject confirmPanel;
+        confirmPanel = pausePanel.transform.GetChild(confirmPanelChildPosition).gameObject;
+        return confirmPanel;
     }
 }

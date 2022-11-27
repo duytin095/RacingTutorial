@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RotateCar : MonoBehaviour
 {
+    [SerializeField]
     private float speed = 20;
     private bool isRotate = false;
     void Start()
