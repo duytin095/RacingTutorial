@@ -2411,6 +2411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   car: {fileID: 1877041248}
   pickingColor: {fileID: 0}
+  defaultColor: {fileID: 2100000, guid: 6c7e85d89b2e5e34a93e7f83facefcaa, type: 2}
 --- !u!4 &1307018013
 Transform:
   m_ObjectHideFlags: 0

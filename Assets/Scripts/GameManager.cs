@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.IO;
+using UnityEngine;
 
 
 public class GameManager : MonoBehaviour
@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
 
     //Color Hadler
     public Material storedColor;
-    public Material defaultColor;
 
     private void Awake()
     {
@@ -93,12 +92,12 @@ public class GameManager : MonoBehaviour
 
     public void LoadColor()
     {
-        if(storedColor == null)
-        {
-            storedColor = defaultColor;
-            Debug.Log("UO");
-        }
-
+        //if(storedColor == null)
+        //{
+        //    Debug.Log("dmm");
+        //    storedColor = defaultColor;
+            
+        //}
         string path = Application.persistentDataPath + "/CarProperty.json";
         if (File.Exists(path))
         {

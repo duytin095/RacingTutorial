@@ -12,12 +12,23 @@ public class UIHandle : MonoBehaviour
     private const string CREDIT_SCENE = "Credit";
 
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject finishPanel;
     private int confirmPanelChildPosition = 1;
     private bool isGamePause = false;
 
     private void Start()
     {
-        if(pausePanel != null)
+        // Make sure that FINISH PANEL is exist and not open at start
+        if (finishPanel != null)
+        {
+            if (finishPanel.activeInHierarchy)
+            {
+                finishPanel.SetActive(false);
+            }
+        }
+
+        // Make sure that PAUSE PANEL is exist and not open at start
+        if (pausePanel != null)
         {
             if (pausePanel.activeInHierarchy)
             {
@@ -80,7 +91,7 @@ public class UIHandle : MonoBehaviour
 
     public void PauseGame()
     {
-        if (!isGamePause)
+        if (!isGamePause && pausePanel != null)
         {
             Time.timeScale = 0;
             AudioListener.pause = true;
@@ -91,7 +102,7 @@ public class UIHandle : MonoBehaviour
 
     public void UnPauseGame()
     {
-        if (isGamePause)
+        if (isGamePause && pausePanel != null)
         {
             Time.timeScale = 1;
             AudioListener.pause = false;
@@ -128,5 +139,17 @@ public class UIHandle : MonoBehaviour
         GameObject confirmPanel;
         confirmPanel = pausePanel.transform.GetChild(confirmPanelChildPosition).gameObject;
         return confirmPanel;
+    }
+
+    public void OpenFinishPanel()
+    {
+        if(finishPanel != null) // Make sure that FINISH PANEL exist in hierarchy
+        {
+            if (!finishPanel.activeInHierarchy) // Checking if that FINISH PANEL not active in hierarchy
+            {
+                Debug.Log("OPen ");
+                finishPanel.SetActive(true);
+            }
+        }
     }
 }

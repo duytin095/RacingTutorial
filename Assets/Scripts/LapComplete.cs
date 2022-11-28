@@ -29,6 +29,9 @@ public class LapComplete : MonoBehaviour
 
     private Follower[] follower;
 
+
+    [SerializeField] private UIHandle uIHandle;
+
     private void Start()
     {
         follower = FindObjectsOfType<Follower>();
@@ -47,6 +50,7 @@ public class LapComplete : MonoBehaviour
             if (GameManager.Instance == null)
                 return;
 
+            uIHandle.OpenFinishPanel();
             GameManager.Instance.SavePlayerInfo();
             GameManager.Instance.SaveCash();
 

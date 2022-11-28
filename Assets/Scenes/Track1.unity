@@ -1140,6 +1140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 2095029089}
+  finishPanel: {fileID: 1707543121}
 --- !u!1 &424532189
 GameObject:
   m_ObjectHideFlags: 0
@@ -3202,6 +3203,7 @@ MonoBehaviour:
   carEngineSound: {fileID: 2066152550}
   carFX: {fileID: 1928977432}
   bgMusic: {fileID: 1728597153}
+  uIHandle: {fileID: 421231014}
 --- !u!65 &1125587374
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9681,7 +9683,7 @@ GameObject:
   - component: {fileID: 1707543124}
   - component: {fileID: 1707543123}
   m_Layer: 5
-  m_Name: WinPanel
+  m_Name: FinishPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

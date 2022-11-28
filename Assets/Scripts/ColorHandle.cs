@@ -5,6 +5,15 @@ public class ColorHandle : MonoBehaviour
 {
     public GameObject car;
     public Material pickingColor;
+    public Material defaultColor;
+
+    private void Start()
+    {
+        if (!pickingColor)
+        {
+            //ChangeColor(defaultColor);
+        }
+    }
     public void ChangeColor(Material color)
     {
         car.GetComponent<MeshRenderer>().material = color;
