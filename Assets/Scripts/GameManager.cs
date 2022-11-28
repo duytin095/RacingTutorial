@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
         if(storedColor == null)
         {
             storedColor = defaultColor;
+            Debug.Log("UO");
         }
 
         string path = Application.persistentDataPath + "/CarProperty.json";

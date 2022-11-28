@@ -8,7 +8,7 @@ public class CreditHandle : MonoBehaviour
 
     private void Start()
     {
-        Invoke("BackToMainMenu", 25f);
+        Invoke("BackToMain", 25f);
     }
 
     private void Update()
@@ -17,12 +17,12 @@ public class CreditHandle : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            BackToMainMenu();
+            BackToMain();
         }
     }
 
-    public void BackToMainMenu()
+    public void BackToMain()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("CustomCar");
     }
 }
