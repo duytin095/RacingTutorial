@@ -6,15 +6,18 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    // Time
     private float storedRawTime;
     private int storedMunite;
     private int stroredSecond;
     private float storedMilisecond;
+
+    // Money
     public int storedCash;
+    public int cashValue = 50; // earning value
 
 
-
-    //Color Hadler
+    //Color
     public Material storedColor;
 
     private void Awake()
@@ -139,7 +142,7 @@ public class GameManager : MonoBehaviour
     public void SaveCash()
     {
         Cash cashData = new Cash();
-        storedCash += 50;
+        storedCash += cashValue;
         cashData.value = storedCash;
         string json = JsonUtility.ToJson(cashData);
         File.WriteAllText(Application.persistentDataPath + "/cash.json", json);

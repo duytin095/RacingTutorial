@@ -12,9 +12,13 @@ public class UIHandle : MonoBehaviour
     private const string TRACK_SELECTION = "TrackSelect";
     private const string CREDIT_SCENE = "Credit";
 
+
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject finishPanel;
+
     [SerializeField] private GameObject cashText;
+
+    [SerializeField] private GameObject earningValue;
 
     private int confirmPanelChildPosition = 1;
     private bool isGamePause = false;
@@ -22,8 +26,7 @@ public class UIHandle : MonoBehaviour
 
     private void Start()
     {
-        // Make sure that FINISH PANEL is exist and not open at start
-        if (finishPanel != null)
+        if (finishPanel != null) // Make sure that FINISH PANEL is exist and not open at start
         {
             if (finishPanel.activeInHierarchy)
             {
@@ -31,8 +34,7 @@ public class UIHandle : MonoBehaviour
             }
         }
 
-        // Make sure that PAUSE PANEL is exist and not open at start
-        if (pausePanel != null)
+        if (pausePanel != null) // Make sure that PAUSE PANEL is exist and not open at start
         {
             if (pausePanel.activeInHierarchy)
             {
@@ -51,13 +53,12 @@ public class UIHandle : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isGamePause && !ConfirmPanel().activeInHierarchy) //make sure ConfirmPanel was closed
+            if (isGamePause && !ConfirmPanel().activeInHierarchy) // Make sure ConfirmPanel was closed
             {
                 UnPauseGame();
             }
             else if(!isGamePause)
             {
-
                 PauseGame();
             }
         }
@@ -157,8 +158,14 @@ public class UIHandle : MonoBehaviour
         {
             if (!finishPanel.activeInHierarchy) // Checking if that FINISH PANEL not active in hierarchy
             {
-                Debug.Log("OPen ");
                 finishPanel.SetActive(true);
+            }
+
+            if(earningValue != null)
+            {
+                //var valueText = gameObject.GetComponent<Text>(); // cash value in finish panel
+                //valueText.text =  ""+GameManager.Instance.cashValue;
+                earningValue.GetComponent<Text>().text = "" + GameManager.Instance.cashValue;
             }
         }
     }

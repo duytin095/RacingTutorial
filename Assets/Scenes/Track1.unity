@@ -1141,6 +1141,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 2095029089}
   finishPanel: {fileID: 1707543121}
+  cashText: {fileID: 0}
+  earningValue: {fileID: 1066042865}
 --- !u!1 &424532189
 GameObject:
   m_ObjectHideFlags: 0
@@ -3858,7 +3860,7 @@ GameObject:
   - component: {fileID: 1280183304}
   - component: {fileID: 1280183303}
   m_Layer: 5
-  m_Name: RewardTitle
+  m_Name: EarningTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9688,7 +9690,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1707543122
 RectTransform:
   m_ObjectHideFlags: 0

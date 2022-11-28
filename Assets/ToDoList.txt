@@ -8,3 +8,4 @@
 - check the position when racing and display it on screen
 - strange thing with maretial till happening
 - audio disable debugging
+- the time does not reload when click restart button
