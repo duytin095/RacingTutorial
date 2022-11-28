@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -13,8 +14,11 @@ public class UIHandle : MonoBehaviour
 
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject finishPanel;
+    [SerializeField] private GameObject cashText;
+
     private int confirmPanelChildPosition = 1;
     private bool isGamePause = false;
+    
 
     private void Start()
     {
@@ -35,6 +39,12 @@ public class UIHandle : MonoBehaviour
                 pausePanel.SetActive(false);
             }
         }
+
+        if (cashText != null) // Make sure that CASH TEXT is exist in hierarchy
+        {
+            cashText.GetComponent<Text>().text = "Cash: " + GameManager.Instance.storedCash.ToString() + "$";
+        }
+
         
     }
     private void Update()

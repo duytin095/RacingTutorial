@@ -2892,7 +2892,6 @@ GameObject:
   - component: {fileID: 1649120379}
   - component: {fileID: 1649120381}
   - component: {fileID: 1649120380}
-  - component: {fileID: 1649120382}
   m_Layer: 5
   m_Name: Cash
   m_TagString: Untagged
@@ -2961,18 +2960,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649120378}
   m_CullTransparentMesh: 1
---- !u!114 &1649120382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1649120378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 569df2c2cd3c99b4b843e25f8bd7968b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1661458630
 GameObject:
   m_ObjectHideFlags: 0
@@ -3231,7 +3218,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storedCash: 0
   storedColor: {fileID: 0}
-  defaultColor: {fileID: 2100000, guid: 2d997c6d92b71154e8dee74617594aea, type: 2}
 --- !u!4 &1781091983
 Transform:
   m_ObjectHideFlags: 0
@@ -3803,6 +3789,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 0}
+  finishPanel: {fileID: 0}
+  cashText: {fileID: 1649120378}
 --- !u!1 &2054442596
 GameObject:
   m_ObjectHideFlags: 0
