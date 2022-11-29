@@ -3217,6 +3217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storedCash: 0
+  cashValue: 50
   storedColor: {fileID: 0}
 --- !u!4 &1781091983
 Transform:
@@ -3791,6 +3792,7 @@ MonoBehaviour:
   pausePanel: {fileID: 0}
   finishPanel: {fileID: 0}
   cashText: {fileID: 1649120378}
+  earningValue: {fileID: 0}
 --- !u!1 &2054442596
 GameObject:
   m_ObjectHideFlags: 0

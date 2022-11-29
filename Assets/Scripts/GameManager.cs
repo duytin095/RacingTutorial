@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
 
     //Color
-    public Material storedColor;
+    public Material storedColor ;
 
     private void Awake()
     {
@@ -95,12 +95,6 @@ public class GameManager : MonoBehaviour
 
     public void LoadColor()
     {
-        //if(storedColor == null)
-        //{
-        //    Debug.Log("dmm");
-        //    storedColor = defaultColor;
-            
-        //}
         string path = Application.persistentDataPath + "/CarProperty.json";
         if (File.Exists(path))
         {
@@ -135,7 +129,6 @@ public class GameManager : MonoBehaviour
             string json = File.ReadAllText(path);
             Cash cash = JsonUtility.FromJson<Cash>(json);
             storedCash = cash.value;
-            Debug.Log("load cash" + storedCash);
         }
     }
 

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class CustomCar : MonoBehaviour
 {
+    [SerializeField]
+    Material carMaterial;
     private void Start()
     {
-        transform.GetComponent<MeshRenderer>().material = GameManager.Instance.storedColor;
+        carMaterial = GameManager.Instance.storedColor;
+        transform.GetComponent<MeshRenderer>().material = carMaterial;
     }
 }
