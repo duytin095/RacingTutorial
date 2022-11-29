@@ -19,6 +19,7 @@ public class UIHandle : MonoBehaviour
     [SerializeField] private GameObject cashText;
 
     [SerializeField] private GameObject earningValue;
+    [SerializeField] private LapComplete lapCompleteTrigger;
 
     private int confirmPanelChildPosition = 1;
     private bool isGamePause = false;
@@ -76,6 +77,7 @@ public class UIHandle : MonoBehaviour
     }
     public void BackToMainMenu()
     {
+        ResetCountingTime();
         SceneManager.LoadScene(CUSTOM_CAR);
         UnPauseGame();
 
@@ -125,6 +127,7 @@ public class UIHandle : MonoBehaviour
 
     public void Restart()
     {
+        ResetCountingTime();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         UnPauseGame();
     }
@@ -167,6 +170,14 @@ public class UIHandle : MonoBehaviour
                 //valueText.text =  ""+GameManager.Instance.cashValue;
                 earningValue.GetComponent<Text>().text = "" + GameManager.Instance.cashValue;
             }
+        }
+    }
+
+    private void ResetCountingTime()
+    {
+        if (lapCompleteTrigger != null)
+        {
+            lapCompleteTrigger.ResetTime();
         }
     }
 }

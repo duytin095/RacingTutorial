@@ -1143,6 +1143,7 @@ MonoBehaviour:
   finishPanel: {fileID: 1707543121}
   cashText: {fileID: 0}
   earningValue: {fileID: 1066042865}
+  lapCompleteTrigger: {fileID: 1125587373}
 --- !u!1 &424532189
 GameObject:
   m_ObjectHideFlags: 0
@@ -3773,6 +3774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778b808fdd5d50b42ba4f3e4b10cbcf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carMaterial: {fileID: 0}
 --- !u!1 &1253262903
 GameObject:
   m_ObjectHideFlags: 0

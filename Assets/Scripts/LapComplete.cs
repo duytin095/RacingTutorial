@@ -56,10 +56,7 @@ public class LapComplete : MonoBehaviour
 
             lapTimeManager.UpdateBestScore();
 
-            LapTimeManager.miliCount = 0;
-            LapTimeManager.minuteCount = 0;
-            LapTimeManager.secondCount = 0;
-            LapTimeManager.rawTime = 0;
+            ResetTime();
 
             halfPointTrigger.SetActive(true);
             lapCompleteTrigger.SetActive(false);
@@ -96,5 +93,13 @@ public class LapComplete : MonoBehaviour
             }
         }
 
+    }
+
+    public void ResetTime()
+    {
+        LapTimeManager.miliCount = 0;
+        LapTimeManager.minuteCount = 0;
+        LapTimeManager.secondCount = 0;
+        LapTimeManager.rawTime = 0;
     }
 }
