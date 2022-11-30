@@ -1141,6 +1141,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 2095029089}
   finishPanel: {fileID: 1707543121}
+  garagePanel: {fileID: 0}
+  menuPanel: {fileID: 0}
   cashText: {fileID: 0}
   earningValue: {fileID: 1066042865}
   lapCompleteTrigger: {fileID: 1125587373}
@@ -3315,6 +3317,7 @@ MonoBehaviour:
   minuteBox: {fileID: 2030456914}
   secondBox: {fileID: 785480630}
   miliBox: {fileID: 424532189}
+  finishTimeBox: {fileID: 157211034}
   minuteBoxBest: {fileID: 1237805993}
   secondBoxBest: {fileID: 1773011200}
   miliBoxBest: {fileID: 159968439}
@@ -3775,6 +3778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carMaterial: {fileID: 0}
+  defaultMaterial: {fileID: 0}
 --- !u!1 &1253262903
 GameObject:
   m_ObjectHideFlags: 0

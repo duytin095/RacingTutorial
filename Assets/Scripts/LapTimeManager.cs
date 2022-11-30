@@ -22,10 +22,14 @@ public class LapTimeManager : MonoBehaviour
     public GameObject minuteBox;
     public GameObject secondBox;
     public GameObject miliBox;
+    public GameObject finishTimeBox;
 
     public GameObject minuteBoxBest;
     public GameObject secondBoxBest;
     public GameObject miliBoxBest;
+
+
+    
     private void Start()
     {
         if (GameManager.Instance == null)
@@ -39,6 +43,10 @@ public class LapTimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(finishTimeBox != null)
+        {
+            finishTimeBox.GetComponent<Text>().text = minuteCount.ToString("00") + ":" + secondCount + ":" + miliCount.ToString("0.0");
+        }
         rawTime += Time.deltaTime * 10;
         miliCount += Time.deltaTime * 10;
         miliDisplay = miliCount.ToString("F0");
