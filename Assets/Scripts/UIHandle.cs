@@ -7,7 +7,8 @@ using UnityEditor;
 
 public class UIHandle : MonoBehaviour
 {
-    private const string MAIN_MENU = "Menu";
+    public static UIHandle Instance;
+
     private const string CUSTOM_CAR = "CustomCar";
     private const string TRACK_SELECTION = "TrackSelect";
     private const string CREDIT_SCENE = "Credit";
@@ -15,6 +16,8 @@ public class UIHandle : MonoBehaviour
 
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject finishPanel;
+    [SerializeField] private GameObject garagePanel;
+    [SerializeField] private GameObject menuPanel;
 
     [SerializeField] private GameObject cashText;
 
@@ -23,7 +26,11 @@ public class UIHandle : MonoBehaviour
 
     private int confirmPanelChildPosition = 1;
     private bool isGamePause = false;
-    
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -48,7 +55,14 @@ public class UIHandle : MonoBehaviour
             cashText.GetComponent<Text>().text = "Cash: " + GameManager.Instance.storedCash.ToString() + "$";
         }
 
-        
+        if (garagePanel != null) // Make sure that GARAGE PANEL is exist and not open at start
+        {
+            if (garagePanel.activeInHierarchy)
+            {
+                garagePanel.SetActive(false);
+            }
+        }
+
     }
     private void Update()
     {
@@ -166,11 +180,25 @@ public class UIHandle : MonoBehaviour
 
             if(earningValue != null)
             {
-                //var valueText = gameObject.GetComponent<Text>(); // cash value in finish panel
-                //valueText.text =  ""+GameManager.Instance.cashValue;
                 earningValue.GetComponent<Text>().text = "" + GameManager.Instance.cashValue;
             }
         }
+    }
+
+    public void OpenGaragePanel()
+    {
+        if(!garagePanel.activeInHierarchy && garagePanel != null)
+            garagePanel.SetActive(true);
+        if (menuPanel.activeInHierarchy && menuPanel != null)
+            menuPanel.SetActive(false);
+
+    }
+    public void CloseGaragePanel()
+    {
+        if(garagePanel.activeInHierarchy && garagePanel != null)
+            garagePanel.SetActive(false);
+        if (!menuPanel.activeInHierarchy && menuPanel != null)
+            menuPanel.SetActive(true);
     }
 
     private void ResetCountingTime()
