@@ -18,6 +18,7 @@ public class CustomCar : MonoBehaviour
         if(carMaterial == null) // material dont display right when push git??? or turn off the lap??? dont know why 
         {
             ChangeMaterial(defaultMaterial);
+            Debug.Log("uo");
         }
 
     }

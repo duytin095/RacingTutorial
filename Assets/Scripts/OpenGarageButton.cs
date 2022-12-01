@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickOnCar : MonoBehaviour
+public class OpenGarageButton : MonoBehaviour
 {
     private void OnMouseDown()
     {

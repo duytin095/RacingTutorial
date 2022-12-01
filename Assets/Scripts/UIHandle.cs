@@ -180,7 +180,8 @@ public class UIHandle : MonoBehaviour
 
             if(earningValue != null)
             {
-                earningValue.GetComponent<Text>().text = "" + GameManager.Instance.cashValue + "$";
+                var value = GameManager.Instance.cashValue;
+                earningValue.GetComponent<Text>().text = "" + value + "$";
             }
         }
     }
