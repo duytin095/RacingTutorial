@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -18,6 +19,7 @@ public class UIHandle : MonoBehaviour
     [SerializeField] private GameObject finishPanel;
     [SerializeField] private GameObject garagePanel;
     [SerializeField] private GameObject menuPanel;
+    [SerializeField] private Slider slider;
 
     [SerializeField] private GameObject cashText;
 
@@ -26,6 +28,10 @@ public class UIHandle : MonoBehaviour
 
     private int confirmPanelChildPosition = 1;
     private bool isGamePause = false;
+    private float manaCost = 0.1f;
+
+
+    public GameObject player;
 
     private void Awake()
     {
@@ -34,6 +40,9 @@ public class UIHandle : MonoBehaviour
 
     private void Start()
     {
+
+        
+
         if (finishPanel != null) // Make sure that FINISH PANEL is exist and not open at start
         {
             if (finishPanel.activeInHierarchy)
@@ -63,6 +72,15 @@ public class UIHandle : MonoBehaviour
             }
         }
 
+
+        slider.value = 9f; // DEFAULT mana value
+        if (slider != null) // Make sure that SLIDER BAR is exist
+        {
+            Invoke("ManaHandle", 3);
+        }
+            
+            
+       
     }
     private void Update()
     {
@@ -76,8 +94,21 @@ public class UIHandle : MonoBehaviour
             {
                 PauseGame();
             }
-        }
+        } 
     }
+
+    private void ManaHandle()
+    {
+        Debug.Log("EY_1");
+        InvokeRepeating("ManaDeincrease", 0, 1);
+    }
+    private void ManaDeincrease()
+    {
+       
+        slider.value -= manaCost;
+        Debug.Log("OKAY");
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(1);

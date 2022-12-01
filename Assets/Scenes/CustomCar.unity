@@ -1838,7 +1838,7 @@ RectTransform:
   - {fileID: 1099808530}
   - {fileID: 1935849599}
   m_Father: {fileID: 1847024348}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1882,7 +1882,7 @@ RectTransform:
   m_Children:
   - {fileID: 601243697}
   m_Father: {fileID: 1847024348}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2287,7 +2287,7 @@ RectTransform:
   - {fileID: 940159119}
   - {fileID: 2123368389}
   m_Father: {fileID: 1847024348}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3325,7 +3325,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   car: {fileID: 1877041248}
   pickingColor: {fileID: 0}
-  defaultColor: {fileID: 2100000, guid: 6c7e85d89b2e5e34a93e7f83facefcaa, type: 2}
 --- !u!4 &1307018013
 Transform:
   m_ObjectHideFlags: 0
@@ -4436,9 +4435,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 709052196}
   - {fileID: 895100965}
   - {fileID: 673025633}
+  - {fileID: 709052196}
   m_Father: {fileID: 2026410884}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
