@@ -51,6 +51,7 @@ public class LapComplete : MonoBehaviour
                 return;
 
             uIHandle.OpenFinishPanel();
+            uIHandle.CancelInvoke();
             GameManager.Instance.SavePlayerInfo();
             GameManager.Instance.SaveCash();
 

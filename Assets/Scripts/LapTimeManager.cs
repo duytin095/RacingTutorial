@@ -19,103 +19,64 @@ public class LapTimeManager : MonoBehaviour
 
     public static string miliDisplay;
 
-    public GameObject minuteBox;
-    public GameObject secondBox;
-    public GameObject miliBox;
-    public GameObject finishTimeBox;
-
-    public GameObject minuteBoxBest;
-    public GameObject secondBoxBest;
-    public GameObject miliBoxBest;
+    [SerializeField]
+    private GameObject presentTimeBox;
+    [SerializeField]
+    private GameObject bestTimeBox;
+    [SerializeField]
+    private GameObject finishTimeBox;
 
 
-    
+
+
     private void Start()
     {
         if (GameManager.Instance == null)
         {
-
             return;
         }
         UpdateBestScore();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(finishTimeBox != null)
-        {
-            finishTimeBox.GetComponent<Text>().text = minuteCount.ToString("00") + ":" + secondCount + ":" + miliCount.ToString("0.0");
-        }
         rawTime += Time.deltaTime * 10;
         miliCount += Time.deltaTime * 10;
         miliDisplay = miliCount.ToString("F0");
+
+        if(finishTimeBox != null)
+        {
+            finishTimeBox.GetComponent<Text>().text = 
+                minuteCount.ToString("00") + ":" + 
+                secondCount + ":" + 
+                miliCount.ToString("0.0");
+        }
+
+        presentTimeBox.GetComponent<Text>().text =
+            minuteCount.ToString("00") + ":" +
+            secondCount.ToString("00") + ":" +
+            miliCount.ToString("0.0");
 
         if (miliCount >= 10)
         {
             miliCount = 0;
             secondCount += 1;
-
         }
-
-        if (secondCount <= 9)
-        {
-            secondBox.GetComponent<Text>().text = "0" + secondCount + ".";
-
-        }
-        else
-        {
-            secondBox.GetComponent<Text>().text = "" + secondCount + ".";
-
-        }
-
 
         if (secondCount >= 60)
         {
             secondCount = 0;
             minuteCount += 1;
-
         }
-
-        if (minuteCount <= 9)
-        {
-            minuteBox.GetComponent<Text>().text = "0" + minuteCount + ":";
-        }
-        else
-        {
-            minuteBox.GetComponent<Text>().text = "" + minuteCount + ":";
-        }
-
-        miliBox.GetComponent<Text>().text = "" + miliDisplay;
     }
 
 
     public void UpdateBestScore()
     {
         GameManager.Instance.LoadPlayerInfo();
-
-        if (minuteCountBest <= 9)
-        {
-            minuteBoxBest.GetComponent<Text>().text = "0" + minuteCountBest.ToString() + ":";
-
-        }
-        else
-        {
-            minuteBoxBest.GetComponent<Text>().text = "" + minuteCountBest.ToString() + ":";
-
-        }
-
-        if (secondCountBest <= 9)
-        {
-            secondBoxBest.GetComponent<Text>().text = "0" + secondCountBest.ToString() + ".";
-
-        }
-        else
-        {
-            secondBoxBest.GetComponent<Text>().text = "" + secondCountBest.ToString() + ".";
-
-        }
-        
-        miliBoxBest.GetComponent<Text>().text = miliCountBest.ToString();
+        bestTimeBox.GetComponent<Text>().text = 
+            minuteCountBest.ToString("00") + ":" +
+            secondCountBest.ToString("00") + ":" + 
+            miliCountBest.ToString("0.0");
     }
 }

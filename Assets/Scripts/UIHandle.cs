@@ -73,9 +73,10 @@ public class UIHandle : MonoBehaviour
         }
 
 
-        slider.value = 9f; // DEFAULT mana value
+        
         if (slider != null) // Make sure that SLIDER BAR is exist
         {
+            slider.value = 9f; // DEFAULT mana value
             Invoke("ManaHandle", 3);
         }
             
@@ -99,14 +100,11 @@ public class UIHandle : MonoBehaviour
 
     private void ManaHandle()
     {
-        Debug.Log("EY_1");
         InvokeRepeating("ManaDeincrease", 0, 1);
     }
     private void ManaDeincrease()
     {
-       
         slider.value -= manaCost;
-        Debug.Log("OKAY");
     }
 
     public void PlayGame()
