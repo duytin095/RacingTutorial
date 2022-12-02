@@ -6,7 +6,11 @@ public class ColorHandle : MonoBehaviour
     public GameObject car;
     public Material pickingColor;
 
-
+    public static ColorHandle Instance;
+    private void Awake()
+    {
+        Instance = this; 
+    }
     public void ChangeColor(Material color)
     {
         car.GetComponent<MeshRenderer>().material = color;

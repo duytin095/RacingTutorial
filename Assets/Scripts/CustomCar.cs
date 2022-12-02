@@ -15,11 +15,10 @@ public class CustomCar : MonoBehaviour
         ChangeMaterial(carMaterial);
 
         // if can't get the SAVE COLOR
-        //type mismatch????
         if(carMaterial == null) // material dont display right when push git??? or turn off the lap??? dont know why 
         {
             ChangeMaterial(defaultMaterial);
-            Debug.Log("yep?");
+            ColorHandle.Instance.ChangeColor(defaultMaterial);
         }
 
     }
