@@ -7,4 +7,3 @@
 - unlock new color with the cash
 - check the position when racing and display it on screen
 - audio disable debugging
-- material issue
