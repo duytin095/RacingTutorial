@@ -9,9 +9,10 @@ public class Follower : MonoBehaviour
     public float maxSpeed = 25;
     float distanceTraveled;
 
-    private void Update()
+
+    private void FixedUpdate()
     {
-        if(speed <= maxSpeed)
+        if (speed <= maxSpeed)
         {
             speed += Time.deltaTime * speedByTime;
 

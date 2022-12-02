@@ -1,6 +1,5 @@
 - thay đổi góc nhìn khi nhấn "C"(camera)
 - Camera stable
-- Smoothing opponent movement
 - 5:11	
 - score mode(colllect some thing and increase the score)
 - time mode?
