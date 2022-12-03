@@ -19,7 +19,7 @@ public class UIHandle : MonoBehaviour
     [SerializeField] private GameObject finishPanel;
     [SerializeField] private GameObject garagePanel;
     [SerializeField] private GameObject menuPanel;
-    [SerializeField] private Slider slider;
+    [SerializeField] private Slider fuelBar;
 
     [SerializeField] private GameObject cashText;
 
@@ -28,7 +28,7 @@ public class UIHandle : MonoBehaviour
 
     private int confirmPanelChildPosition = 1;
     private bool isGamePause = false;
-    private float manaCost = 0.1f;
+    private float fuelCost = 0.1f;
 
 
     public GameObject player;
@@ -74,10 +74,10 @@ public class UIHandle : MonoBehaviour
 
 
         
-        if (slider != null) // Make sure that SLIDER BAR is exist
+        if (fuelBar != null) // Make sure that SLIDER BAR is exist
         {
-            slider.value = 9f; // DEFAULT mana value
-            Invoke("ManaHandle", 3);
+            fuelBar.value = 9f; // DEFAULT mana value
+            Invoke("FuelHandle", 3);
         }
             
             
@@ -98,13 +98,13 @@ public class UIHandle : MonoBehaviour
         } 
     }
 
-    private void ManaHandle()
+    private void FuelHandle()
     {
-        InvokeRepeating("ManaDeincrease", 0, 1);
+        InvokeRepeating("FuelDeincrease", 0, 1);
     }
-    private void ManaDeincrease()
+    private void FuelDeincrease()
     {
-        slider.value -= manaCost;
+        fuelBar.value -= fuelCost;
     }
 
     public void PlayGame()
