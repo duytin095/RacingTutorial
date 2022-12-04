@@ -3897,7 +3897,7 @@ MonoBehaviour:
   lapTimeBox: {fileID: 0}
   lapTimeManager: {fileID: 1148956088}
   lapCount: 0
-  lapTotal: 2
+  lapTotal: 1
   lapCountDisplay: {fileID: 517562896}
   playerFollowCam: {fileID: 963194225}
   player: {fileID: 1602767578}
