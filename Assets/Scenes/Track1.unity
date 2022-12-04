@@ -1401,7 +1401,7 @@ MonoBehaviour:
   finishPanel: {fileID: 1707543121}
   garagePanel: {fileID: 0}
   menuPanel: {fileID: 0}
-  slider: {fileID: 1683450067}
+  fuelBar: {fileID: 1683450067}
   cashText: {fileID: 0}
   earningValue: {fileID: 1066042865}
   lapCompleteTrigger: {fileID: 1125587373}
@@ -3897,7 +3897,7 @@ MonoBehaviour:
   lapTimeBox: {fileID: 0}
   lapTimeManager: {fileID: 1148956088}
   lapCount: 0
-  lapTotal: 1
+  lapTotal: 2
   lapCountDisplay: {fileID: 517562896}
   playerFollowCam: {fileID: 963194225}
   player: {fileID: 1602767578}

@@ -16,7 +16,7 @@ public class LapComplete : MonoBehaviour
     public LapTimeManager lapTimeManager;
 
     public float lapCount = 0;
-    public float lapTotal = 1;
+    public float lapTotal = 2;
     public Text lapCountDisplay;
 
 

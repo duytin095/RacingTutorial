@@ -28,7 +28,7 @@ public class UIHandle : MonoBehaviour
 
     private int confirmPanelChildPosition = 1;
     private bool isGamePause = false;
-    private float fuelCost = 0.1f;
+    private float fuelCost = 0.2f;
 
 
     public GameObject player;

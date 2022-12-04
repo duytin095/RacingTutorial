@@ -7,6 +7,8 @@ public class CustomCar : MonoBehaviour
     [SerializeField]
     Material defaultMaterial;
 
+
+
     private void Start()
     {
         carMaterial = GameManager.Instance.storedColor;
@@ -15,15 +17,20 @@ public class CustomCar : MonoBehaviour
         ChangeMaterial(carMaterial);
 
         // if can't get the SAVE COLOR
-        if(carMaterial == null) // material dont display right when push git??? or turn off the lap??? dont know why 
+        //type mismatch??
+        if (carMaterial == null) // material dont display right when push git??? or turn off the lap??? dont know why 
         {
             ChangeMaterial(defaultMaterial);
             ColorHandle.Instance.ChangeColor(defaultMaterial);
+            Debug.Log("fuck you");
         }
+
+        
 
     }
     private void ChangeMaterial(Material material)
     {
         transform.GetComponent<MeshRenderer>().material = material;
+        //Debug.Log("uh hu ye");
     }
 }

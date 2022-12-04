@@ -1,6 +1,4 @@
-- thay đổi góc nhìn khi nhấn "C"(camera)
 - Camera stable
-- 5:11	
 - score mode(colllect some thing and increase the score)
 - time mode?
 - unlock new color with the cash
